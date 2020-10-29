@@ -2,7 +2,7 @@ from django.conf import settings
 from django.db import models
 from edc_constants.choices import YES_NO
 
-edc_morbi_listmodels = settings.EDC_MORBI_LISTMODELS
+edc_integrated_care_listmodels = settings.EDC_MORBI_LISTMODELS
 
 
 class DrugRefillModelMixin(models.Model):
@@ -25,7 +25,7 @@ class DrugRefillModelMixin(models.Model):
     )
 
     modifications = models.ManyToManyField(
-        edc_morbi_listmodels.get("rx_modifications"),
+        edc_integrated_care_listmodels.get("rx_modifications"),
         verbose_name="Which changes occurred?",
         blank=True,
     )
@@ -38,7 +38,7 @@ class DrugRefillModelMixin(models.Model):
     )
 
     modifications_reason = models.ManyToManyField(
-        edc_morbi_listmodels.get("rx_modification_reasons"),
+        edc_integrated_care_listmodels.get("rx_modification_reasons"),
         verbose_name="Why did the patient’s previous prescription change?",
         blank=True,
     )

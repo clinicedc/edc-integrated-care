@@ -9,7 +9,7 @@ from edc_test_utils import DefaultTestSettings
 from os.path import abspath, dirname, join
 
 base_dir = dirname(abspath(__file__))
-app_name = "edc_morbi"
+app_name = "edc_integrated_care"
 
 DEFAULT_SETTINGS = DefaultTestSettings(
     calling_file=__file__,
@@ -22,8 +22,8 @@ DEFAULT_SETTINGS = DefaultTestSettings(
     SUBJECT_VISIT_MISSED_MODEL=f"edc_metadata.subjectvisitmissed",
     # SUBJECT_REQUISITION_MODEL=f"edc_visit_tracking.subjectrequisition",
     EDC_MORBI_LISTMODELS={
-        "rx_modifications": "edc_morbi.rxmodifications",
-        "rx_modification_reasons": "edc_morbi.rxmodificationreasons",
+        "rx_modifications": "edc_integrated_care.rxmodifications",
+        "rx_modification_reasons": "edc_integrated_care.rxmodificationreasons",
     },
     INSTALLED_APPS=[
         "django.contrib.admin",
@@ -56,7 +56,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         "edc_visit_schedule.apps.AppConfig",
         "edc_visit_tracking.apps.AppConfig",
         "edc_ltfu.apps.AppConfig",
-        "edc_morbi.apps.AppConfig",
+        "edc_integrated_care.apps.AppConfig",
     ],
     RANDOMIZATION_LIST_PATH=join(
         base_dir, app_name, "tests", "test_randomization_list.csv"
