@@ -19,7 +19,7 @@ with open(join(dirname(abspath(__file__)), "requirements.txt")) as f:
 os.chdir(normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name="edc-mbty",
+    name="edc-morbi",
     version=VERSION,
     author=u"Erik van Widenfelt",
     author_email="ew2789@gmail.com",
